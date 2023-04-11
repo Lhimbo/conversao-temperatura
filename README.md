@@ -18,5 +18,5 @@ $ docker logs [container_id]
 ```
 **Run**
 ```
-$ docker run -d $user/conversao-temperatura:v1.0.1
+$ docker run -P 8080 -d $user/conversao-temperatura:v1.0.1
 ```
