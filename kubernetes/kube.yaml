@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy_v1
+  name: deploy-v1
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: web
@@ -11,12 +12,11 @@ spec:
       labels: 
         app: web
     spec:
-      replicas: 4
       containers:
       - name: site
         image: $user/conversao-temperatura:v1.0.1
         ports: 
-        - containerPort: 80
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
@@ -24,10 +24,9 @@ metadata:
   name: web-page
 spec:
   selector:
-    matchLabels:
-      app: web
-    ports:
-      - port: 80
-        protocol: TCP
-        nodePort: 30000
-    type: NodePort
+    app: web
+  ports:
+    - port: 8080
+      protocol: TCP
+      nodePort: 30000
+  type: NodePort
