@@ -32,4 +32,6 @@ $ k3d cluster delete
 ### Comandos Kubectl
 ```
 $ kubectl get nodes
+$ kubectl port-forward node/name host:port
+$ kubectl apply -f kube.yaml
 ```
