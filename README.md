@@ -6,6 +6,7 @@ O projeto conversão de temperatura é um projeto desenvolvido em NodeJS. O proj
 ### Observações do projeto
 A aplicação é exposta usando a porta 8080
 
+---
 ### Comandos Docker
 **Build**
 ```
@@ -19,4 +20,16 @@ $ docker logs [container_id]
 **Run**
 ```
 $ docker run -P 8080 -d $user/conversao-temperatura:v1.0.1
+```
+---
+### Comandos K3d
+```
+$ k3d cluster create [name] [--no-lb] [--agents n] [--servers n] [--port "host:port@loadbalancer"]
+$ k3d cluster ls
+$ k3d cluster delete
+```
+---
+### Comandos Kubectl
+```
+$ kubectl get nodes
 ```
